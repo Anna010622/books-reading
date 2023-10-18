@@ -5,4 +5,11 @@ import react from '@vitejs/plugin-react-swc';
 export default defineConfig({
 	plugins: [react()],
 	base: '/books-reading/',
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: '@import "./src/styles/_shared.scss";',
+			},
+		},
+	},
 });
