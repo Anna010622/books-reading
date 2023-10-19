@@ -3,7 +3,7 @@ html {
 }
 body {
 	background-color: $bg-light-cl;
-	color: $main-text-cl;
+	color: $main-tx-cl;
 	font-family: $main-font-family;
 	font-size: 14px;
 	height: 100%;
@@ -35,7 +35,7 @@ main {
 
 	@include desktop {
 		max-width: 1440px;
-		padding-left: 16;
-		padding-right: 16;
+		padding-left: 16px;
+		padding-right: 16px;
 	}
 }

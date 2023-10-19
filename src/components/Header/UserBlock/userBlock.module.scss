@@ -1,0 +1,55 @@
+.userBlock {
+	display: flex;
+	gap: 14px;
+
+	&::before {
+		content: '';
+		display: block;
+		width: 1px;
+		height: 33px;
+		background-color: $secondary-tx-cl;
+	}
+}
+
+.user {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+
+	@include tablet {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+}
+.userIcon {
+	display: flex;
+	width: 33px;
+	height: 33px;
+	border-radius: 50%;
+	background-color: $bg-light-gray-cl;
+}
+.iconText {
+	margin: auto;
+	font-weight: 600;
+}
+
+.userName {
+	display: none;
+	font-weight: 300;
+
+	@include tablet {
+		display: inline-block;
+	}
+}
+
+.exit {
+	padding: 0;
+	border: 0;
+	background: none;
+	font-weight: 300;
+	// text-decoration: underline;
+	text-decoration-line: underline;
+	text-underline-offset: 2px;
+}
