@@ -1,0 +1,14 @@
+.btn {
+	padding: 12px;
+	border: 0;
+	color: $main-light-cl;
+	text-align: center;
+	font-weight: 500;
+	background-color: $accent-cl;
+
+	transition: background-color $transition;
+
+	&:hover {
+		background-color: $accent-cl-hover;
+	}
+}
