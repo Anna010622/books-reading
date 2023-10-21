@@ -1,5 +1,5 @@
 const LibraryPage = () => {
-	return <div>LibraryPage</div>;
+	return <div className="container">LibraryPage</div>;
 };
 
 export default LibraryPage;

@@ -1,0 +1,78 @@
+.loginInfo {
+	position: relative;
+	padding: 49px 20px 16px;
+	background-color: $main-light-cl;
+	flex-grow: 1;
+
+	&::before {
+		position: absolute;
+		top: 20px;
+
+		left: 50%;
+		transform: translateX(-50%);
+
+		content: '“';
+		text-align: center;
+		color: $accent-cl;
+		text-align: center;
+		font-family: $secondary-font-family;
+		font-size: 59px;
+	}
+
+	@include tablet {
+		padding: 126px 32px 71px;
+
+		&::before {
+			top: 82px;
+		}
+	}
+	@include desktop {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		&::before {
+			top: 200px;
+		}
+	}
+}
+
+.quote {
+	margin: 0 auto 16px;
+	max-width: 229px;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 500;
+
+	@include tablet {
+		margin-bottom: 20px;
+		max-width: 526px;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 1.58;
+	}
+
+	@include desktop {
+		max-width: 397px;
+	}
+}
+
+.author {
+	color: $secondary-tx-cl;
+	text-align: center;
+	font-weight: 500;
+
+	&::before {
+		content: '';
+		display: block;
+		margin: 0 auto 12px;
+		width: 100px;
+		height: 1px;
+		background-color: $main-tx-cl;
+		opacity: 0.5;
+	}
+
+	@include tablet {
+		font-size: 20px;
+	}
+}

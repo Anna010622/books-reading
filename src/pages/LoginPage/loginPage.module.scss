@@ -1,0 +1,5 @@
+.pageContainer {
+	@include desktop {
+		display: flex;
+	}
+}
