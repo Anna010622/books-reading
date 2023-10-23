@@ -1,0 +1,11 @@
+.btn {
+	padding: 12px;
+	border: 1px solid $main-tx-cl;
+	background: transparent;
+	font-weight: 500;
+	transition: border-color $transition;
+
+	&:hover {
+		border-color: $accent-cl;
+	}
+}
