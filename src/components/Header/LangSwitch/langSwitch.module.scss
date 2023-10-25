@@ -1,0 +1,19 @@
+.select {
+	border: 0;
+	font-size: 12px;
+	color: $main-tx-cl;
+	font-family: $main-font-family;
+	transition: color $transition;
+
+	&:focus-visible {
+		outline: 0;
+	}
+	&:hover {
+		cursor: pointer;
+		color: $accent-cl;
+	}
+}
+
+.option {
+	// padding: 10px;
+}

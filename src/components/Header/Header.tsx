@@ -1,3 +1,4 @@
+import LangSwitch from './LangSwitch/LangSwitch';
 import Logo from './Logo/Logo';
 import Nav from './Nav/Nav';
 import UserBlock from './UserBlock/UserBlock';
@@ -12,6 +13,7 @@ const Header = () => {
 				<div className={styles.rightSide}>
 					<Nav />
 					<UserBlock />
+					<LangSwitch />
 				</div>
 			</div>
 		</header>
