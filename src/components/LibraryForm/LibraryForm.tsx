@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { InferType } from 'yup';
+import { useTranslation } from 'react-i18next';
 import ButtonBorder from '../../components/Buttons/ButtonBorder/ButtonBorder';
 import styles from './libraryForm.module.scss';
 
@@ -30,12 +31,16 @@ const LibraryFrom = () => {
 		resolver: yupResolver(schema),
 	});
 
+	const { t } = useTranslation('translation', {
+		keyPrefix: 'libraryPage.form',
+	});
+
 	const onSubmit = (data: Book) => console.log(data);
 
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 			<div className={styles.field}>
-				<label className={styles.label}>Назва книги</label>
+				<label className={styles.label}>{t('book title')}</label>
 				<input
 					className={styles.input}
 					type="text"
@@ -46,7 +51,7 @@ const LibraryFrom = () => {
 				<p className={styles.errorMessage}>{errors.bookTitle?.message}</p>
 			</div>
 			<div className={styles.field}>
-				<label className={styles.label}>Автор книги</label>
+				<label className={styles.label}>{t('author')}</label>
 				<input
 					className={styles.input}
 					type="text"
@@ -57,7 +62,7 @@ const LibraryFrom = () => {
 				<p className={styles.errorMessage}>{errors.author?.message}</p>
 			</div>
 			<div className={styles.field}>
-				<label className={styles.label}>Рік видання</label>
+				<label className={styles.label}>{t('publication date')}</label>
 				<input
 					className={styles.input}
 					type="number"
@@ -68,7 +73,7 @@ const LibraryFrom = () => {
 				<p className={styles.errorMessage}>{errors.year?.message}</p>
 			</div>
 			<div className={styles.field}>
-				<label className={styles.label}>Кількість сторінок</label>
+				<label className={styles.label}>{t('amount of pages')}</label>
 				<input
 					className={styles.input}
 					type="number"
@@ -79,7 +84,7 @@ const LibraryFrom = () => {
 				<p className={styles.errorMessage}>{errors.pages?.message}</p>
 			</div>
 
-			<ButtonBorder title="Додати" />
+			<ButtonBorder title={t('add')} />
 		</form>
 	);
 };

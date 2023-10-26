@@ -1,5 +1,9 @@
 .pageContainer {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
 	@include desktop {
-		display: flex;
+		flex-direction: row;
 	}
 }

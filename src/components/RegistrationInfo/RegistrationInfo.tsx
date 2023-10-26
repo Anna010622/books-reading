@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-
-import styles from './registrationInfo.module.scss';
-import arrowIcon from '../../assets/icons/arrow-right.svg';
+import { useTranslation } from 'react-i18next';
 import ButtonMain from '../Buttons/ButtonMain';
+import arrowIcon from '../../assets/icons/arrow-right.svg';
+import styles from './registrationInfo.module.scss';
 
 const RegistrationInfo = () => {
 	const handleClick = () => {
@@ -11,13 +11,16 @@ const RegistrationInfo = () => {
 			behavior: 'smooth',
 		});
 	};
+	const { t } = useTranslation('translation', {
+		keyPrefix: 'registrationPage.info',
+	});
 
 	return (
 		<section className={styles.section}>
 			<h1 className={styles.mainTitle}>Books Reading</h1>
 
 			<div className={styles.infoWrapper}>
-				<h2 className={styles.listTitle}>Допоможе вам</h2>
+				<h2 className={styles.listTitle}>{t('title1')}</h2>
 				<ul className={styles.list}>
 					<li className={styles.item}>
 						<img
@@ -27,9 +30,7 @@ const RegistrationInfo = () => {
 							width="4px"
 							height="8px"
 						/>
-						<p className={styles.text}>
-							Швидше сформулювати свою ціль і розпочати читати
-						</p>
+						<p className={styles.text}>{t('item1')}</p>
 					</li>
 					<li className={styles.item}>
 						<img
@@ -39,9 +40,7 @@ const RegistrationInfo = () => {
 							width="4px"
 							height="8px"
 						/>
-						<p className={styles.text}>
-							Пропорційно розподілити навантаження на кожний день
-						</p>
+						<p className={styles.text}>{t('item2')}</p>
 					</li>
 					<li className={styles.item}>
 						<img
@@ -51,13 +50,11 @@ const RegistrationInfo = () => {
 							width="4px"
 							height="8px"
 						/>
-						<p className={styles.text}>
-							Пропорційно розподілити навантаження на кожний день
-						</p>
+						<p className={styles.text}>{t('item3')}</p>
 					</li>
 				</ul>
 
-				<h2 className={styles.listTitle}>Також ви зможете </h2>
+				<h2 className={styles.listTitle}>{t('title2')}</h2>
 				<ul className={styles.list}>
 					<li className={styles.item}>
 						<img
@@ -67,9 +64,7 @@ const RegistrationInfo = () => {
 							width="4px"
 							height="8px"
 						/>
-						<p className={styles.text}>
-							Формувати особисту думку незалежну від інших
-						</p>
+						<p className={styles.text}>{t('item4')}</p>
 					</li>
 					<li className={styles.item}>
 						<img
@@ -79,9 +74,7 @@ const RegistrationInfo = () => {
 							width="4px"
 							height="8px"
 						/>
-						<p className={styles.text}>
-							Підвищити свої професійні якості опираючись на нові знання
-						</p>
+						<p className={styles.text}>{t('item5')}</p>
 					</li>
 					<li className={styles.item}>
 						<img
@@ -91,16 +84,16 @@ const RegistrationInfo = () => {
 							width="4px"
 							height="8px"
 						/>
-						<p className={styles.text}>Стати цікавим співрозмовником</p>
+						<p className={styles.text}>{t('item6')}</p>
 					</li>
 				</ul>
 			</div>
 
 			<div className={styles.links}>
 				<Link className={styles.link} to="/login">
-					Увійти
+					{t('login')}
 				</Link>
-				<ButtonMain title="Реєстрація" onClick={handleClick} />
+				<ButtonMain title={t('register')} onClick={handleClick} />
 			</div>
 		</section>
 	);

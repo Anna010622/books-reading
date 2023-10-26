@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import i18n from '../../i18n';
+import { useTranslation } from 'react-i18next';
 import googleIcon from '../../assets/icons/google.svg';
 import styles from './loginFrom.module.scss';
 
@@ -9,10 +11,17 @@ type FormData = {
 	email: string;
 	password: string;
 };
+
 const schema = yup
 	.object({
-		email: yup.string().email().required(),
-		password: yup.string().min(7, 'має бути принаймні 7 символів').required(),
+		email: yup
+			.string()
+			.email()
+			.required(i18n.t('loginPage.validation.emailRequired')),
+		password: yup
+			.string()
+			.min(7, i18n.t('loginPage.validation.passwordLength'))
+			.required(),
 	})
 	.required();
 
@@ -23,6 +32,10 @@ const LoginForm = () => {
 		formState: { errors },
 	} = useForm({
 		resolver: yupResolver(schema),
+	});
+
+	const { t } = useTranslation('translation', {
+		keyPrefix: 'loginPage.form',
 	});
 
 	const onSubmit = (data: FormData) => console.log(data);
@@ -43,7 +56,7 @@ const LoginForm = () => {
 
 				<div className={styles.field}>
 					<label className={styles.label}>
-						Електронна адреса <span>*</span>
+						{t('email')} <span>*</span>
 					</label>
 					<input
 						className={styles.input}
@@ -55,22 +68,22 @@ const LoginForm = () => {
 				</div>
 				<div className={styles.field}>
 					<label className={styles.label}>
-						Пароль <span>*</span>
+						{t('password')} <span>*</span>
 					</label>
 					<input
 						className={styles.input}
 						type="password"
 						{...register('password')}
-						placeholder="Пароль"
+						placeholder={t('password')}
 					/>
 					<p className={styles.errorMessage}>{errors.password?.message}</p>
 				</div>
 
 				<button className={styles.btnSubmit} type="submit">
-					Увійти
+					{t('login')}
 				</button>
 				<Link to="/registration" className={styles.registrationLink}>
-					Реєстрація
+					{t('register')}
 				</Link>
 			</form>
 		</div>

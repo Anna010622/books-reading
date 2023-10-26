@@ -1,3 +1,65 @@
 {
-	"Welcome to React": "Welcome to React and react-i18next"
+	"header": {
+		"logout": "Logout"
+	},
+	"registrationPage": {
+		"form": {
+			"name": "Name",
+			"email": "Email",
+			"password": "Password",
+			"confirm password": "Confirm password",
+			"register": "Register",
+			"have account": "Already have an account?",
+			"login": "Log in"
+		},
+		"validation": {
+			"emailRequired": "email is a required field",
+			"passwordLength": "password must be at least 7 characters"
+		},
+		"info": {
+			"title1": "Will help you to",
+			"item1": "Create your goal faster and proceed to read",
+			"item2": "Divide process proportionally for each day",
+			"item3": "Track your success",
+			"title2": "You may also",
+			"item4": "Pose your own independent point of view",
+			"item5": "Improve your professional skills according to new knowledge",
+			"item6": "Become an interesting interlocutor",
+			"login": "Log in",
+			"register": "Register"
+		}
+	},
+	"loginPage": {
+		"form": {
+			"email": "Email",
+			"password": "Password",
+			"login": "Login",
+			"register": "Register"
+		},
+		"validation": {
+			"emailRequired": "email is a required field",
+			"passwordLength": "password must be at least 7 characters"
+		},
+		"info": {
+			"quote": "Books are the ships of thoughts, wandering through the waves of time.",
+			"author": "Francis Bacon"
+		}
+	},
+	"libraryPage": {
+		"form": {
+			"book title": "Book title",
+			"author": "Author",
+			"publication date": "Publication date",
+			"amount of pages": "Amount of pages",
+			"add": "Add"
+		},
+		"infoModal": {
+			"step1": "Step 1.",
+			"title1": "Create your own library",
+			"description1": "Add there books which you are going to read.",
+			"step2": "Step 2.",
+			"title2": "Create your first training",
+			"description2": "Set a goal, choose period, start training."
+		}
+	}
 }

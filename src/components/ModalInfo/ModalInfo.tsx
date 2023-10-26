@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import ButtonMain from '../Buttons/ButtonMain';
 import iconLibrary from '../../assets/icons/library.svg';
 import iconFlag from '../../assets/icons/flag.svg';
@@ -8,11 +9,15 @@ type Props = {
 	close: () => void;
 };
 const ModalInfo = ({ close }: Props) => {
+	const { t } = useTranslation('translation', {
+		keyPrefix: 'libraryPage.infoModal',
+	});
+
 	return (
 		<div className={styles.modal}>
 			<ul className={styles.list}>
 				<li className={styles.item}>
-					<h2 className={styles.title}>Крок 1.</h2>
+					<h2 className={styles.title}>{t('step1')}</h2>
 					<div className={styles.wrapper}>
 						<img
 							className={styles.icon}
@@ -22,7 +27,7 @@ const ModalInfo = ({ close }: Props) => {
 							height="17"
 						/>
 						<div className={styles.content}>
-							<h3 className={styles.subTitle}>Створіть особисту бібліотеку</h3>
+							<h3 className={styles.subTitle}>{t('title1')}</h3>
 							<div className={styles.inner}>
 								<img
 									className={styles.arrow}
@@ -31,15 +36,13 @@ const ModalInfo = ({ close }: Props) => {
 									width="10"
 									height="12"
 								/>
-								<p className={styles.text}>
-									Додайте до неї книжки, які маєте намір прочитати.
-								</p>
+								<p className={styles.text}>{t('description1')}</p>
 							</div>
 						</div>
 					</div>
 				</li>
 				<li className={styles.item}>
-					<h2 className={styles.title}>Крок 2.</h2>
+					<h2 className={styles.title}>{t('step1')}</h2>
 					<div className={styles.wrapper}>
 						<img
 							className={styles.icon}
@@ -49,9 +52,7 @@ const ModalInfo = ({ close }: Props) => {
 							height="17"
 						/>
 						<div className={styles.content}>
-							<h3 className={styles.subTitle}>
-								Сформуйте своє перше тренування
-							</h3>
+							<h3 className={styles.subTitle}>{t('title2')}</h3>
 							<div className={styles.inner}>
 								<img
 									className={styles.arrow}
@@ -60,9 +61,7 @@ const ModalInfo = ({ close }: Props) => {
 									width="10"
 									height="12"
 								/>
-								<p className={styles.text}>
-									Визначте ціль, оберіть період, розпочинайте тренування.
-								</p>
+								<p className={styles.text}>{t('description2')}</p>
 							</div>
 						</div>
 					</div>

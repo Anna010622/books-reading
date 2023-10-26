@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import styles from './registrationFrom.module.scss';
+import i18n from '../../i18n';
+import { useTranslation } from 'react-i18next';
 import googleIcon from '../../assets/icons/google.svg';
+import styles from './registrationFrom.module.scss';
 
 type FormData = {
 	name: string;
@@ -13,8 +15,14 @@ type FormData = {
 const schema = yup
 	.object({
 		name: yup.string().required(),
-		email: yup.string().email().required(),
-		password: yup.string().min(7, 'має бути принаймні 7 символів').required(),
+		email: yup
+			.string()
+			.email()
+			.required(i18n.t('loginPage.validation.emailRequired')),
+		password: yup
+			.string()
+			.min(7, i18n.t('loginPage.validation.passwordLength'))
+			.required(),
 	})
 	.required();
 
@@ -27,6 +35,9 @@ const RegistrationForm = () => {
 		resolver: yupResolver(schema),
 	});
 
+	const { t } = useTranslation('translation', {
+		keyPrefix: 'registrationPage.form',
+	});
 	const onSubmit = (data: FormData) => console.log(data);
 
 	return (
@@ -45,7 +56,7 @@ const RegistrationForm = () => {
 
 				<div className={styles.field}>
 					<label className={styles.label}>
-						Ім'я <span>*</span>
+						{t('name')} <span>*</span>
 					</label>
 					<input
 						className={styles.input}
@@ -57,7 +68,7 @@ const RegistrationForm = () => {
 				</div>
 				<div className={styles.field}>
 					<label className={styles.label}>
-						Електронна адреса <span>*</span>
+						{t('email')} <span>*</span>
 					</label>
 					<input
 						className={styles.input}
@@ -69,7 +80,7 @@ const RegistrationForm = () => {
 				</div>
 				<div className={styles.field}>
 					<label className={styles.label}>
-						Пароль <span>*</span>
+						{t('password')} <span>*</span>
 					</label>
 					<input
 						className={styles.input}
@@ -81,7 +92,7 @@ const RegistrationForm = () => {
 				</div>
 				<div className={styles.field}>
 					<label className={styles.label}>
-						Підтвердити пароль <span>*</span>
+						{t('confirm password')} <span>*</span>
 					</label>
 					<input
 						className={styles.input}
@@ -92,11 +103,11 @@ const RegistrationForm = () => {
 					<p className={styles.errorMessage}>{errors.password?.message}</p>
 				</div>
 				<button className={styles.btnSubmit} type="submit">
-					Зареєструватися
+					{t('register')}
 				</button>
 				<Link to="/login" className={styles.loginLink}>
-					Вже з нами?
-					<span>Увійти</span>
+					{t('have account')}
+					<span>{t('login')}</span>
 				</Link>
 			</form>
 		</div>

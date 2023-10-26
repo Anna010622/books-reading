@@ -8,6 +8,7 @@ import ModalInfo from '../../components/ModalInfo/ModalInfo';
 
 const LibraryPage = () => {
 	const [isModalOpened, setIsModalOpened] = useState<boolean>(true);
+
 	const handleModalClose = () => {
 		setIsModalOpened(false);
 	};
