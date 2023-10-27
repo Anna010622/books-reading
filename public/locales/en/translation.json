@@ -60,6 +60,18 @@
 			"step2": "Step 2.",
 			"title2": "Create your first training",
 			"description2": "Set a goal, choose period, start training."
+		},
+		"bookList": {
+			"Already read": "Already read",
+			"Reading now": "Reading now",
+			"Going to read": "Going to read",
+			"Book title": "Book title",
+			"Author": "Author",
+			"Year": "Year",
+			"Pages": "Pages",
+			"Rating": "Rating",
+			"Resume": "Resume",
+			"My training": "My training"
 		}
 	}
 }

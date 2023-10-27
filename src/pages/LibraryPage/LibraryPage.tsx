@@ -5,6 +5,26 @@ import styles from './libraryPage.module.scss';
 import { useState } from 'react';
 import ModalOverlay from '../../components/ModalOverlay/ModalOverlay';
 import ModalInfo from '../../components/ModalInfo/ModalInfo';
+import BookList from '../../components/BookList/BookList';
+
+const books = [
+	{
+		id: 1,
+		bookTitle: 'Development of valuable proposals..',
+		author: 'Alex Osterwalder, Yves Pigneur',
+		year: 2013,
+		pages: 368,
+		rating: 0,
+	},
+	{
+		id: 2,
+		bookTitle: 'Product management in Scrum. Agile methods for your business..',
+		author: 'Roman Pichler',
+		year: 2010,
+		pages: 92,
+		rating: 5,
+	},
+];
 
 const LibraryPage = () => {
 	const [isModalOpened, setIsModalOpened] = useState<boolean>(true);
@@ -26,6 +46,12 @@ const LibraryPage = () => {
 					<ModalInfo close={handleModalClose} />
 				</ModalOverlay>
 			)}
+
+			<div className={styles.books}>
+				<BookList items={books} listTitle="Already read" className="already" />
+				<BookList items={books} listTitle="Reading now" className="reading" />
+				<BookList items={books} listTitle="Going to read" className="going" />
+			</div>
 		</div>
 	);
 };

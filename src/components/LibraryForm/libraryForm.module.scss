@@ -1,6 +1,7 @@
 .form {
 	display: grid;
 	gap: 20px;
+	margin-bottom: 20px;
 
 	& button {
 		margin-top: 20px;
@@ -13,6 +14,7 @@
 		column-gap: 32px;
 		row-gap: 24px;
 		align-items: center;
+		margin-bottom: 40px;
 
 		& button {
 			grid-column: 1 / 4;
@@ -23,6 +25,7 @@
 		grid-template-columns: 346px 250px 134px 134px 181px;
 		align-items: flex-end;
 		gap: 16px;
+		margin-bottom: 80px;
 
 		& button {
 			grid-column: 5/5;

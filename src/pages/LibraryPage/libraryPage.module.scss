@@ -6,3 +6,17 @@
 	display: block;
 	margin-bottom: 32px;
 }
+
+.books {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	@include tablet {
+		gap: 40px;
+	}
+
+	@include desktop {
+		gap: 32px;
+	}
+}
