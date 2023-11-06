@@ -79,6 +79,7 @@
 	@media (max-width: calc($tablet - 0.02px)) {
 		.rating & {
 			margin-bottom: 20px;
+			align-items: center;
 		}
 	}
 }
@@ -119,11 +120,12 @@
 	border: 0;
 	padding: 12px;
 
-	background: $bg-dark-gray-cl;
+	background-color: $bg-dark-gray-cl;
 	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
 
 	color: $main-light-cl;
 	font-weight: 500;
+	transition: background-color $transition;
 
 	@include tablet {
 		width: 80px;
@@ -131,5 +133,9 @@
 
 	@include desktop {
 		width: 130px;
+	}
+
+	&:hover {
+		background-color: $bg-dark-gray-hover-cl;
 	}
 }

@@ -1,0 +1,17 @@
+.rating {
+	display: flex;
+	gap: 4px;
+}
+.icon {
+	cursor: pointer;
+	width: 17px;
+	height: 17px;
+
+	&:global(.fill) path {
+		fill: $accent-cl;
+	}
+}
+
+input[type='radio'] {
+	display: none;
+}

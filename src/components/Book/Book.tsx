@@ -1,6 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { MdMenuBook } from 'react-icons/md';
+import { useState } from 'react';
 import styles from './book.module.scss';
+import ResumeModal from '../ResumeModal/ResumeModal';
+import ModalOverlay from '../ModalOverlay/ModalOverlay';
+import Rating from '../Rating/Rating';
 
 export type Item = {
 	id: number;
@@ -16,9 +20,18 @@ type Props = {
 };
 
 const Book = ({ item }: Props) => {
+	const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
+
 	const { t } = useTranslation('translation', {
 		keyPrefix: 'libraryPage.bookList',
 	});
+
+	const handleModalOpen = () => {
+		setIsModalOpened(true);
+	};
+	const handleModalClose = () => {
+		setIsModalOpened(false);
+	};
 
 	return (
 		<>
@@ -37,13 +50,20 @@ const Book = ({ item }: Props) => {
 					{item.pages}
 				</p>
 				<div className={styles.rating}>
-					<p className={`${styles.content} ${styles.grid}`}>
+					<div className={`${styles.content} ${styles.grid}`}>
 						<span className={styles.title}>{t('Rating')}: </span>
-						{item.rating}
-					</p>
-					<button className={styles.resume}>{t('Resume')}</button>
+						<Rating rating={item.rating} />
+					</div>
+					<button className={styles.resume} onClick={handleModalOpen}>
+						{t('Resume')}
+					</button>
 				</div>
 			</div>
+			{isModalOpened && (
+				<ModalOverlay close={handleModalClose}>
+					<ResumeModal onClose={handleModalClose} />
+				</ModalOverlay>
+			)}
 		</>
 	);
 };
