@@ -72,6 +72,20 @@
 			"Rating": "Рейтинг",
 			"Resume": "Резюме",
 			"My training": "Моє тренування"
+		},
+		"resumeModal": {
+			"Choose rating of the book": "Обрати рейтинг книги",
+			"Resume": "Резюме",
+			"Back": "Назад",
+			"Save": "Зберегти"
+		}
+	},
+	"homePage": {
+		"goalsBoard": {
+			"My goals": "Моя мета прочитати",
+			"Amount of books": "Кількість книжок",
+			"Amount of days": "Кількість днів",
+			"Books left": "Залишилось книжок"
 		}
 	}
 }

@@ -1,0 +1,68 @@
+.board {
+	background-color: $main-light-cl;
+	box-shadow: 0px 2px 3px 0px rgba(9, 30, 63, 0.25);
+	max-width: 300px;
+
+	@media screen and (max-width: calc($desktop - 0.02px)) {
+		margin: 0 auto;
+	}
+
+	@media screen and (min-width: $tablet) and (max-width: calc($desktop - 0.02px)) {
+		display: flex;
+		gap: 20px;
+		align-items: flex-start;
+		justify-content: space-between;
+		padding: 20px 28px 8px 52px;
+		max-width: 100%;
+
+		&:global(.boardWithThreeCards) {
+			padding: 20px 42px 15px;
+		}
+	}
+
+	@include desktop {
+		max-width: 288px;
+	}
+}
+
+.title {
+	padding: 18px;
+
+	color: $main-light-cl;
+	text-align: center;
+	font-size: 20px;
+	line-height: calc(24 / 20);
+	font-weight: 600;
+
+	background: $bg-medium-gray-cl;
+	box-shadow: 0px 2px 3px 0px rgba(9, 30, 63, 0.1);
+
+	@media screen and (min-width: $tablet) and (max-width: calc($desktop - 0.02px)) {
+		width: 275px;
+	}
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	padding: 44px 30px;
+	gap: 20px;
+
+	:global(.boardWithThreeCards) & {
+		gap: 12px;
+	}
+
+	@media screen and (min-width: $tablet) and (max-width: calc($desktop - 0.02px)) {
+		gap: 40px;
+		padding: 0;
+	}
+
+	@include desktop {
+		padding: 48px 34px;
+
+		:global(.boardWithThreeCards) & {
+			gap: 20px;
+			padding: 80px 24px;
+		}
+	}
+}

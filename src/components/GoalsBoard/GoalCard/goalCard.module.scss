@@ -1,0 +1,93 @@
+.card {
+	flex-basis: 100%;
+}
+.numberContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 14px;
+
+	width: 100px;
+	height: 100px;
+
+	background: $bg-light-gray-cl;
+	box-shadow: 4px 4px 8px 0px rgba(36, 42, 55, 0.15);
+
+	:global(.boardWithThreeCards) & {
+		width: 63px;
+		height: 63px;
+	}
+
+	@media screen and (min-width: $tablet) and (max-width: calc($desktop - 0.02px)) {
+		margin-bottom: 4px;
+		width: 100px;
+		height: 60px;
+
+		:global(.boardWithThreeCards) & {
+			width: 100px;
+			height: 60px;
+		}
+	}
+
+	@include desktop {
+		:global(.boardWithThreeCards) & {
+			width: 66px;
+			height: 66px;
+		}
+	}
+}
+.number {
+	font-size: 45px;
+	font-weight: 700;
+	line-height: calc(38 / 45);
+
+	:global(.boardWithThreeCards) & {
+		font-size: 35px;
+	}
+
+	:global(.boardWithThreeCards) .card:last-child & {
+		color: $accent-cl;
+	}
+
+	@include tablet {
+		font-size: 40px;
+	}
+
+	@include desktop {
+		font-size: 45px;
+
+		:global(.boardWithThreeCards) & {
+			font-size: 36px;
+		}
+	}
+}
+.title {
+	padding: 0 13px;
+	color: $secondary-tx-cl;
+	text-align: center;
+	font-weight: 500;
+
+	:global(.boardWithThreeCards) & {
+		padding: 0 5px;
+		font-size: 11px;
+	}
+
+	@include tablet {
+		padding: 0;
+		font-size: 11px;
+
+		:global(.boardWithThreeCards) & {
+			padding: 0;
+		}
+	}
+
+	@include desktop {
+		padding: 0 13px;
+		font-size: 14px;
+
+		:global(.boardWithThreeCards) & {
+			padding: 0 5px;
+			font-size: 12px;
+		}
+	}
+}

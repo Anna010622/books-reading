@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import ButtonBorder from '../Buttons/ButtonBorder/ButtonBorder';
 import ButtonMain from '../Buttons/ButtonMain';
 import styles from './resumeModal.module.scss';
@@ -13,6 +14,10 @@ const ResumeModal = ({ onClose }: Props) => {
 	const [resume, setResume] = useState('');
 	const [hover, setHover] = useState<number | null>(null);
 
+	const { t } = useTranslation('translation', {
+		keyPrefix: 'libraryPage.resumeModal',
+	});
+
 	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
@@ -22,7 +27,7 @@ const ResumeModal = ({ onClose }: Props) => {
 
 	return (
 		<form className={styles.modal} onSubmit={handleSubmit}>
-			<h2 className={styles.title}>Choose rating of the book</h2>
+			<h2 className={styles.title}>{t('Choose rating of the book')}</h2>
 			<div className={styles.rating}>
 				<Rating
 					rating={rating}
@@ -31,7 +36,7 @@ const ResumeModal = ({ onClose }: Props) => {
 					setRating={setRating}
 				/>
 			</div>
-			<h2 className={styles.title}>Resume</h2>
+			<h2 className={styles.title}>{t('Resume')}</h2>
 			<textarea
 				name="resume"
 				className={styles.resume}
@@ -41,8 +46,8 @@ const ResumeModal = ({ onClose }: Props) => {
 				onChange={event => setResume(event.target.value)}
 			></textarea>
 			<div className={styles.buttons}>
-				<ButtonBorder title="Back" onClick={onClose} />
-				<ButtonMain type="submit" title="Save" />
+				<ButtonBorder title={t('Back')} onClick={onClose} />
+				<ButtonMain type="submit" title={t('Save')} />
 			</div>
 		</form>
 	);
