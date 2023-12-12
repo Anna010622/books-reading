@@ -1,0 +1,33 @@
+.field {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 100%;
+	height: 42px;
+	padding: 12px;
+	border: 1px solid $light-gray-cl;
+
+	background: $bg-light-cl;
+
+	@include tablet {
+		width: 250px;
+	}
+}
+.input {
+	flex-grow: 1;
+	background: $bg-light-cl;
+	color: $main-tx-cl;
+	border: none;
+
+	&:focus-visible {
+		outline: none;
+	}
+
+	&::placeholder {
+		color: $light-gray-cl;
+		font-size: 14px;
+		font-weight: 500;
+	}
+}

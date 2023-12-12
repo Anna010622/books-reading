@@ -1,9 +1,15 @@
 .btn {
+	width: 100%;
+	max-width: 171px;
 	padding: 12px;
 	border: 1px solid $main-tx-cl;
 	background: transparent;
 	font-weight: 500;
 	transition: border-color $transition;
+
+	@include desktop {
+		max-width: 181px;
+	}
 
 	&:hover {
 		border-color: $accent-cl;

@@ -1,4 +1,13 @@
 .pageContainer {
+	position: relative;
 	padding-top: 84px;
 	padding-bottom: 31px;
+}
+
+.wrapper {
+	@include desktop {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 32px;
+	}
 }

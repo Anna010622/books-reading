@@ -1,0 +1,135 @@
+.form {
+	display: none;
+
+	@include tablet {
+		margin-bottom: 40px;
+		display: block;
+
+		& h2:first-child {
+			margin-bottom: 28px;
+		}
+	}
+
+	@include desktop {
+		flex-grow: 1;
+		margin-bottom: 23px;
+
+		display: grid;
+		grid-template-columns: auto 262px 250px 181px;
+		grid-auto-rows: 60px 42px 42px;
+		column-gap: 32px;
+		row-gap: 24px;
+
+		& h2:first-child {
+			grid-column-start: 1;
+			grid-column-end: 5;
+			grid-row-start: 1;
+			grid-row-end: 2;
+
+			margin-bottom: 0;
+		}
+		& .dataPickerField:nth-child(2) {
+			grid-column-start: 2;
+			grid-column-end: 3;
+			grid-row-start: 2;
+			grid-row-end: 3;
+		}
+		& .dataPickerField:nth-child(3) {
+			grid-column-start: 3;
+			grid-column-end: 4;
+			grid-row-start: 2;
+			grid-row-end: 3;
+		}
+		& .bookField:nth-child(4) {
+			grid-column-start: 1;
+			grid-column-end: 4;
+			grid-row-start: 3;
+			grid-row-end: 4;
+		}
+		& button:nth-child(5) {
+			grid-column-start: 4;
+			grid-column-end: 5;
+			grid-row-start: 3;
+			grid-row-end: 4;
+		}
+	}
+}
+
+:global(.react-datepicker-wrapper) {
+	width: 100%;
+}
+
+.dataPickerField {
+	@include tablet {
+		display: inline-block;
+		margin-bottom: 24px;
+		width: 250px;
+
+		&:nth-child(2) {
+			margin-right: 40px;
+		}
+
+		&:nth-child(3) {
+			width: 413px;
+		}
+	}
+
+	@include desktop {
+		margin-bottom: 0;
+
+		&:nth-child(2) {
+			margin-right: 12px;
+		}
+	}
+}
+.datePicker {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+
+	@include tablet {
+		width: 250px;
+	}
+}
+
+.bookField {
+	position: relative;
+
+	padding: 12px 37px 12px 12px;
+	height: 42px;
+
+	background: $main-light-cl;
+	box-shadow: 0px 1px 2px 0px rgba(29, 29, 27, 0.15) inset;
+
+	@include tablet {
+		display: inline-block;
+		margin-right: 50px;
+		min-width: 483px;
+		width: calc(100% - (50px + 171px));
+	}
+
+	@include desktop {
+		min-width: 100%;
+		margin: 0;
+	}
+}
+.input {
+	width: 100%;
+	border: none;
+	font-weight: 500;
+
+	&:focus-visible {
+		outline: none;
+	}
+
+	&::placeholder {
+		color: #a6abb9;
+	}
+}
+
+.icon {
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+}
