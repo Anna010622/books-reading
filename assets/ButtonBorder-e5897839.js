@@ -1,0 +1,1 @@
+import{j as n}from"./index-ce003a72.js";const a="/books-reading/assets/arrow-back-bb313d45.svg",r="_btn_1y9eh_1",b={btn:r},c=({title:t,onClick:s,type:o="button"})=>n.jsx("button",{className:b.btn,type:o,onClick:s,children:t});export{c as B,a as i};

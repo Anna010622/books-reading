@@ -72,6 +72,20 @@
 			"Rating": "Rating",
 			"Resume": "Resume",
 			"My training": "My training"
+		},
+		"resumeModal": {
+			"Choose rating of the book": "Choose rating of the book",
+			"Resume": "Resume",
+			"Back": "Back",
+			"Save": "Save"
+		}
+	},
+	"homePage": {
+		"goalsBoard": {
+			"My goals": "My goals",
+			"Amount of books": "Amount of books",
+			"Amount of days": "Amount of days",
+			"Books left": "Books left"
 		}
 	}
 }
