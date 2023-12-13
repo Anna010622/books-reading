@@ -1,19 +1,18 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import calendarIcon from '../../../../assets/icons/calendar.svg';
 import arrowIcon from '../../../../assets/icons/arrow-down-small.svg';
 import styles from './dataPickerInput.module.scss';
 
-interface Props {
-	value: string;
-	onClick: () => void;
-	onChange: () => void;
-	placeholder: string;
-}
-
-export type Ref = HTMLDivElement;
-
-const DatePickerInput = forwardRef<Ref, Props>(
-	({ value, onClick, onChange, placeholder }, ref) => {
+const DatePickerInput = forwardRef(
+	(
+		{
+			value,
+			onClick,
+			onChange,
+			placeholder,
+		}: React.HTMLProps<HTMLInputElement>,
+		ref: React.Ref<HTMLInputElement>
+	) => {
 		return (
 			<div className={styles.field} onClick={onClick} ref={ref}>
 				<img
