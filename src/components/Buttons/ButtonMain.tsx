@@ -1,15 +1,14 @@
+import React from 'react';
 import styles from './buttonMain.module.scss';
 
-type Props = {
-	title: string;
-	type?: 'button' | 'submit' | 'reset';
-	onClick?: () => void;
+type ButtonProps = React.ComponentProps<'button'> & {
+	children: string;
 };
 
-const ButtonMain = ({ title, onClick, type = 'button' }: Props) => {
+const ButtonMain = ({ children, ...rest }: ButtonProps) => {
 	return (
-		<button className={styles.btn} type={type} onClick={onClick}>
-			{title}
+		<button className={styles.btn} {...rest}>
+			{children}
 		</button>
 	);
 };

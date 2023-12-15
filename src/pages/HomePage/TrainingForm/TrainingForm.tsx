@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { uk, enUS } from 'date-fns/esm/locale';
+// import lightFormat from 'date-fns/lightFormat';
 import i18n from '../../../i18n';
 import Title from '../Title/Title';
 import DatePickerInput from './DatePickerInput/DataPickerInput';
@@ -9,16 +10,27 @@ import arrowIcon from '../../../assets/icons/arrow-down-small.svg';
 import styles from './trainingForm.module.scss';
 import ButtonBorder from '../../../components/Buttons/ButtonBorder/ButtonBorder';
 
-export default function TrainingForm() {
-	const [startDate, setStartDate] = useState<null | Date>(null);
-	const [endDate, setEndDate] = useState<null | Date>(null);
+type Props = {
+	startDate: Date | null;
+	finishDate: Date | null;
+	setStartDate: React.Dispatch<React.SetStateAction<Date | null>>;
+	setFinishDate: React.Dispatch<React.SetStateAction<Date | null>>;
+};
 
-	const handelSubmit = (event: React.FormEvent) => {
+export default function TrainingForm({
+	startDate,
+	finishDate,
+	setStartDate,
+	setFinishDate,
+}: Props) {
+	const handelSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
+
+		console.log('submit');
 	};
 
 	return (
-		<form onSubmit={handelSubmit} className={styles.form}>
+		<form className={styles.form} id="trainingForm" onSubmit={handelSubmit}>
 			<Title content="Моє тренування" />
 			<div className={styles.dataPickerField}>
 				<DatePicker
@@ -26,10 +38,10 @@ export default function TrainingForm() {
 					onChange={date => setStartDate(date)}
 					placeholderText="Start"
 					minDate={new Date()}
-					maxDate={endDate}
+					maxDate={finishDate}
 					selectsStart
 					startDate={startDate}
-					endDate={endDate}
+					endDate={finishDate}
 					locale={i18n.language === 'uk' ? uk : enUS}
 					dateFormat="dd.MM.yyyy"
 					customInput={<DatePickerInput />}
@@ -40,13 +52,13 @@ export default function TrainingForm() {
 			</div>
 			<div className={styles.dataPickerField}>
 				<DatePicker
-					selected={endDate}
-					onChange={date => setEndDate(date)}
+					selected={finishDate}
+					onChange={date => setFinishDate(date)}
 					placeholderText="Finish"
 					minDate={startDate || new Date()}
 					selectsEnd
 					startDate={startDate}
-					endDate={endDate}
+					endDate={finishDate}
 					locale={i18n.language === 'uk' ? uk : enUS}
 					dateFormat="dd.MM.yyyy"
 					customInput={<DatePickerInput />}
@@ -71,7 +83,7 @@ export default function TrainingForm() {
 				/>
 			</div>
 
-			<ButtonBorder title="Add" type="submit" />
+			<ButtonBorder title="Add" />
 		</form>
 	);
 }

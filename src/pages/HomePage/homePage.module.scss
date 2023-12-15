@@ -5,9 +5,20 @@
 }
 
 .wrapper {
+	margin-bottom: 33px;
+
+	@include tablet {
+		margin-bottom: 40px;
+	}
+
 	@include desktop {
 		display: flex;
 		flex-direction: row-reverse;
+		align-items: flex-start;
 		gap: 32px;
 	}
+}
+
+.trainingSection {
+	flex-grow: 1;
 }
