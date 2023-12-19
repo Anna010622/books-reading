@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import ButtonBorder from '../Buttons/ButtonBorder/ButtonBorder';
-import ButtonMain from '../Buttons/ButtonMain';
+import OutlineButton from '../../../sharedComponents/Buttons/OutlineButton/OutlineButton';
+import ButtonMain from '../../../sharedComponents/Buttons/ButtonMain';
 import styles from './resumeModal.module.scss';
 import { useState, FormEvent } from 'react';
-import Rating from '../Rating/Rating';
+import Rating from '../../../sharedComponents/Rating/Rating';
 
 type Props = {
 	onClose: () => void;
@@ -46,8 +46,8 @@ const ResumeModal = ({ onClose }: Props) => {
 				onChange={event => setResume(event.target.value)}
 			></textarea>
 			<div className={styles.buttons}>
-				<ButtonBorder title={t('Back')} onClick={onClose} />
-				<ButtonMain type="submit" title={t('Save')} />
+				<OutlineButton onClick={onClose}>{t('Back')}</OutlineButton>
+				<ButtonMain>{t('Save')}</ButtonMain>
 			</div>
 		</form>
 	);

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Chart from './Chart/Chart';
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
-import GoalsBoard from '../../components/GoalsBoard/GoalsBoard';
+import GoalsBoard from './GoalsBoard/GoalsBoard';
 import TrainingForm from './TrainingForm/TrainingForm';
-import BtnMore from '../../components/Buttons/BtnMore/BtnMore';
+import BtnMore from '../../sharedComponents/Buttons/BtnMore/BtnMore';
 import FullScreenModal from './FullScreenModal/FullScreenModal';
-import ButtonMain from '../../components/Buttons/ButtonMain';
+import ButtonMain from '../../sharedComponents/Buttons/ButtonMain';
 import styles from './homePage.module.scss';
 
 export type Book = {
@@ -27,7 +27,10 @@ const HomePage = () => {
 		useState(false);
 	const [startDate, setStartDate] = useState<null | Date>(null);
 	const [finishDate, setFinishDate] = useState<null | Date>(null);
-	const [books, setBooks] = useState<Book[]>([
+	const [
+		books,
+		// setBooks
+	] = useState<Book[]>([
 		// {
 		// 	id: 1,
 		// 	bookTitle:
@@ -56,7 +59,10 @@ const HomePage = () => {
 		// 	rating: 5,
 		// },
 	]);
-	const [statistics, setStatistics] = useState<Statistics[]>([
+	const [
+		statistics,
+		// setStatistics
+	] = useState<Statistics[]>([
 		// { date: '2023-12-18', pages: 10 },
 		// { date: '2023-12-19', pages: 8 },
 		// { date: '2023-12-19', pages: 11 },

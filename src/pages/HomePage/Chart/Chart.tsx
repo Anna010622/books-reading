@@ -98,7 +98,6 @@ export default function Chart({
 				pages: 0,
 			};
 		} else {
-			console.log('else');
 			return {
 				pagesPerDay: pagesPerDay,
 				date: item,

@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { InferType } from 'yup';
 import { useTranslation } from 'react-i18next';
-import ButtonBorder from '../../components/Buttons/ButtonBorder/ButtonBorder';
+import OutlineButton from '../../../sharedComponents/Buttons/OutlineButton/OutlineButton';
 import styles from './libraryForm.module.scss';
 
 const schema = yup
@@ -84,7 +84,7 @@ const LibraryFrom = () => {
 				<p className={styles.errorMessage}>{errors.pages?.message}</p>
 			</div>
 
-			<ButtonBorder title={t('add')} />
+			<OutlineButton>{t('add')}</OutlineButton>
 		</form>
 	);
 };

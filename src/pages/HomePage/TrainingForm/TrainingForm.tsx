@@ -2,13 +2,12 @@ import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { uk, enUS } from 'date-fns/esm/locale';
-// import lightFormat from 'date-fns/lightFormat';
 import i18n from '../../../i18n';
 import Title from '../Title/Title';
 import DatePickerInput from './DatePickerInput/DataPickerInput';
 import arrowIcon from '../../../assets/icons/arrow-down-small.svg';
 import styles from './trainingForm.module.scss';
-import ButtonBorder from '../../../components/Buttons/ButtonBorder/ButtonBorder';
+import OutlineButton from '../../../sharedComponents/Buttons/OutlineButton/OutlineButton';
 
 type Props = {
 	startDate: Date | null;
@@ -83,7 +82,7 @@ export default function TrainingForm({
 				/>
 			</div>
 
-			<ButtonBorder title="Add" />
+			<OutlineButton>Add</OutlineButton>
 		</form>
 	);
 }

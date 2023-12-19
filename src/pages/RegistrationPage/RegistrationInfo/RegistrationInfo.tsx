@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import ButtonMain from '../Buttons/ButtonMain';
-import arrowIcon from '../../assets/icons/arrow-right.svg';
+import ButtonMain from '../../../sharedComponents/Buttons/ButtonMain';
+import arrowIcon from '../../../assets/icons/arrow-right.svg';
 import styles from './registrationInfo.module.scss';
 
 const RegistrationInfo = () => {
@@ -93,7 +93,7 @@ const RegistrationInfo = () => {
 				<Link className={styles.link} to="/login">
 					{t('login')}
 				</Link>
-				<ButtonMain title={t('register')} onClick={handleClick} />
+				<ButtonMain onClick={handleClick}>{t('register')}</ButtonMain>
 			</div>
 		</section>
 	);

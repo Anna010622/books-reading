@@ -1,5 +1,5 @@
-import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
-import RegistrationInfo from '../../components/RegistrationInfo/RegistrationInfo';
+import RegistrationForm from './RegistrationForm/RegistrationForm';
+import RegistrationInfo from './RegistrationInfo/RegistrationInfo';
 import styles from './registrationPage.module.scss';
 
 const RegistrationPage = () => {

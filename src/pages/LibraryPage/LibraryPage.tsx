@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import backIcon from '../../assets/icons/arrow-back.svg';
-import LibraryFrom from '../../components/LibraryForm/LibraryForm';
+import LibraryFrom from './LibraryForm/LibraryForm';
 import styles from './libraryPage.module.scss';
 import { useState } from 'react';
-import ModalOverlay from '../../components/ModalOverlay/ModalOverlay';
-import ModalInfo from '../../components/ModalInfo/ModalInfo';
-import BookList from '../../components/BookList/BookList';
+import ModalOverlay from '../../sharedComponents/ModalOverlay/ModalOverlay';
+import ModalInfo from './ModalInfo/ModalInfo';
+import BookList from './BookList/BookList';
 
 const books = [
 	{

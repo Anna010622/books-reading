@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
 import './i18n';
-import Layout from './components/Layout/Layout';
+import Layout from './Layout/Layout';
 
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 const RegistrationPage = lazy(

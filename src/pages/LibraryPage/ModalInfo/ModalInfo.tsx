@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import ButtonMain from '../Buttons/ButtonMain';
-import iconLibrary from '../../assets/icons/library.svg';
-import iconFlag from '../../assets/icons/flag.svg';
-import iconArrow from '../../assets/icons/arrow-down.svg';
+import ButtonMain from '../../../sharedComponents/Buttons/ButtonMain';
+import iconLibrary from '../../../assets/icons/library.svg';
+import iconFlag from '../../../assets/icons/flag.svg';
+import iconArrow from '../../../assets/icons/arrow-down.svg';
 import styles from './modalInfo.module.scss';
 
 type Props = {
@@ -68,7 +68,7 @@ const ModalInfo = ({ close }: Props) => {
 				</li>
 			</ul>
 
-			<ButtonMain title="Ok" onClick={() => close()} />
+			<ButtonMain onClick={() => close()}>Ok</ButtonMain>
 		</div>
 	);
 };

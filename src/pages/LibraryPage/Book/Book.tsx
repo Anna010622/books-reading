@@ -3,8 +3,8 @@ import { MdMenuBook } from 'react-icons/md';
 import { useState } from 'react';
 import styles from './book.module.scss';
 import ResumeModal from '../ResumeModal/ResumeModal';
-import ModalOverlay from '../ModalOverlay/ModalOverlay';
-import Rating from '../Rating/Rating';
+import ModalOverlay from '../../../sharedComponents/ModalOverlay/ModalOverlay';
+import Rating from '../../../sharedComponents/Rating/Rating';
 
 export type Item = {
 	id: number;
